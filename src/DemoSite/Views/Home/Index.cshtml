@@ -1,0 +1,17 @@
+﻿@using Twavatar
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mini (24x24)</h2>
+@Html.TwitterAvatar("tathamoddie", AvatarSize.Mini)
+
+<h2>Normal (48x48)</h2>
+@Html.TwitterAvatar("tathamoddie")
+
+<h2>Bigger (73x73)</h2>
+@Html.TwitterAvatar("tathamoddie", AvatarSize.Bigger)
+
+<h2>Original (varies)</h2>
+@Html.TwitterAvatar("tathamoddie", AvatarSize.Original)
