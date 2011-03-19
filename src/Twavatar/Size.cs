@@ -1,6 +1,6 @@
 ﻿namespace Twavatar
 {
-    public enum AvatarSize
+    public enum Size
     {
         /// <summary>24px square</summary>
         Mini,

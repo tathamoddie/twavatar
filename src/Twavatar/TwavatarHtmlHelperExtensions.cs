@@ -1,16 +1,16 @@
 ﻿using System.IO;
-using System.Web.Mvc;
 using System.Web.UI;
+using Twavatar;
 
-namespace Twavatar
+namespace System.Web.Mvc
 {
-    public static class HtmlHelperExtensions
+    public static class TwavatarHtmlHelperExtensions
     {
         static readonly AvatarUrlBuilder builder = new AvatarUrlBuilder();
 
-        public static MvcHtmlString TwitterAvatar(this HtmlHelper helper, string username, AvatarSize avatarSize = AvatarSize.Normal)
+        public static MvcHtmlString TwitterAvatar(this HtmlHelper helper, string username, Size size = Size.Normal)
         {
-            var url = builder.BuildAvatarUrl(username, avatarSize);
+            var url = builder.BuildAvatarUrl(username, size);
 
             using (var stringWriter = new StringWriter())
             using (var htmlWriter = new HtmlTextWriter(stringWriter))

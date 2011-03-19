@@ -4,12 +4,12 @@ namespace Twavatar
 {
     public class AvatarUrlBuilder
     {
-        public Uri BuildAvatarUrl(string username, AvatarSize avatarSize)
+        public Uri BuildAvatarUrl(string username, Size size)
         {
             if (username == null) throw new ArgumentNullException("username");
             if (username.Length == 0) throw new ArgumentOutOfRangeException("username");
 
-            var sizeKey = GetSizeKey(avatarSize);
+            var sizeKey = GetSizeKey(size);
 
             var uriBuilder = new UriBuilder("http://img.tweetimag.es")
             {
@@ -19,25 +19,25 @@ namespace Twavatar
             return uriBuilder.Uri;
         }
 
-        static string GetSizeKey(AvatarSize avatarSize)
+        static string GetSizeKey(Size size)
         {
             string sizeKey;
-            switch (avatarSize)
+            switch (size)
             {
-                case AvatarSize.Mini:
+                case Size.Mini:
                     sizeKey = "m";
                     break;
-                case AvatarSize.Normal:
+                case Size.Normal:
                     sizeKey = "n";
                     break;
-                case AvatarSize.Bigger:
+                case Size.Bigger:
                     sizeKey = "b";
                     break;
-                case AvatarSize.Original:
+                case Size.Original:
                     sizeKey = "o";
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException("avatarSize", avatarSize, "Unsupported avatar size");
+                    throw new ArgumentOutOfRangeException("size", size, "Unsupported avatar size");
             }
             return sizeKey;
         }

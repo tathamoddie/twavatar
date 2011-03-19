@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Web.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Twavatar.Tests
 {
@@ -9,7 +10,7 @@ namespace Twavatar.Tests
         public void TwitterAvatar_ShouldReturnMiniAvatar()
         {
             const string expected = "<img alt=\"bob\" src=\"http://img.tweetimag.es/i/bob_m\" />";
-            var result = HtmlHelperExtensions.TwitterAvatar(null, "bob", AvatarSize.Mini);
+            var result = TwavatarHtmlHelperExtensions.TwitterAvatar(null, "bob", Size.Mini);
             Assert.AreEqual(expected, result.ToHtmlString());
         }
 
@@ -19,7 +20,7 @@ namespace Twavatar.Tests
             const string expected = "<img alt=\"bob\" src=\"http://img.tweetimag.es/i/bob_n\" />";
             
             // ReSharper disable RedundantArgumentDefaultValue
-            var result = HtmlHelperExtensions.TwitterAvatar(null, "bob", AvatarSize.Normal);
+            var result = TwavatarHtmlHelperExtensions.TwitterAvatar(null, "bob", Size.Normal);
             // ReSharper restore RedundantArgumentDefaultValue
 
             Assert.AreEqual(expected, result.ToHtmlString());
@@ -29,7 +30,7 @@ namespace Twavatar.Tests
         public void TwitterAvatar_ShouldReturnBiggerAvatar()
         {
             const string expected = "<img alt=\"bob\" src=\"http://img.tweetimag.es/i/bob_b\" />";
-            var result = HtmlHelperExtensions.TwitterAvatar(null, "bob", AvatarSize.Bigger);
+            var result = TwavatarHtmlHelperExtensions.TwitterAvatar(null, "bob", Size.Bigger);
             Assert.AreEqual(expected, result.ToHtmlString());
         }
 
@@ -37,7 +38,7 @@ namespace Twavatar.Tests
         public void TwitterAvatar_ShouldReturnOriginalAvatar()
         {
             const string expected = "<img alt=\"bob\" src=\"http://img.tweetimag.es/i/bob_o\" />";
-            var result = HtmlHelperExtensions.TwitterAvatar(null, "bob", AvatarSize.Original);
+            var result = TwavatarHtmlHelperExtensions.TwitterAvatar(null, "bob", Size.Original);
             Assert.AreEqual(expected, result.ToHtmlString());
         }
 
@@ -45,7 +46,7 @@ namespace Twavatar.Tests
         public void TwitterAvatar_ShouldDefaultToNormalAvatar()
         {
             const string expected = "<img alt=\"bob\" src=\"http://img.tweetimag.es/i/bob_n\" />";
-            var result = HtmlHelperExtensions.TwitterAvatar(null, "bob");
+            var result = TwavatarHtmlHelperExtensions.TwitterAvatar(null, "bob");
             Assert.AreEqual(expected, result.ToHtmlString());
         }
     }
