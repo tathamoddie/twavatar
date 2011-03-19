@@ -39,19 +39,11 @@ namespace Twavatar.Tests
         }
 
         [TestMethod]
-        public void BuildAvatarUrl_ShouldDefaultToNormalAvatar()
-        {
-            const string expected = "http://img.tweetimag.es/i/bob_n";
-            var result = new AvatarUrlBuilder().BuildAvatarUrl("bob");
-            Assert.AreEqual(expected, result.AbsoluteUri);
-        }
-
-        [TestMethod]
         public void BuildAvatarUrl_ShouldThrowArgumentNullExceptionForNullUsername()
         {
             try
             {
-                new AvatarUrlBuilder().BuildAvatarUrl(null);
+                new AvatarUrlBuilder().BuildAvatarUrl(null, AvatarSize.Normal);
                 Assert.Fail("Expected exception was never thrown");
             }
             catch (ArgumentNullException ex)
@@ -65,7 +57,7 @@ namespace Twavatar.Tests
         {
             try
             {
-                new AvatarUrlBuilder().BuildAvatarUrl(string.Empty);
+                new AvatarUrlBuilder().BuildAvatarUrl(string.Empty, AvatarSize.Normal);
                 Assert.Fail("Expected exception was never thrown");
             }
             catch (ArgumentOutOfRangeException ex)

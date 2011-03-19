@@ -4,7 +4,7 @@ namespace Twavatar
 {
     public class AvatarUrlBuilder
     {
-        public Uri BuildAvatarUrl(string username, AvatarSize avatarSize = AvatarSize.Normal)
+        public Uri BuildAvatarUrl(string username, AvatarSize avatarSize)
         {
             if (username == null) throw new ArgumentNullException("username");
             if (username.Length == 0) throw new ArgumentOutOfRangeException("username");
