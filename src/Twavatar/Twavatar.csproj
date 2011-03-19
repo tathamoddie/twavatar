@@ -53,6 +53,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PostBuildEvent>"$(SolutionDir)..\tools\NuGet.exe" pack "$(ProjectDir)Twavatar.nuspec"</PostBuildEvent>
+    <DocumentationFile>bin\Release\Twavatar.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

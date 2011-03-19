@@ -12,5 +12,6 @@
   <files>
     <file src="bin\Release\Twavatar.dll" target="lib" />
     <file src="bin\Release\Twavatar.pdb" target="lib" />
+    <file src="bin\Release\Twavatar.xml" target="lib" />
   </files>
 </package>
