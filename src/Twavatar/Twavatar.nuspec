@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>twavatar</id>
+    <version>1.0.0</version>
+    <authors>Tatham Oddie</authors>
+    <description>Super simple ASP.NET helper for rendering Twitter avatars / profile images. Just write @Html.TwitterAvatar("tathamoddie") in your MVC view, or call new AvatarUrlBuilder().BuildUrl("tathamoddie"). Supports multiple sizes.</description>
+    <language>en-US</language>
+    <projectUrl>http://twavatar.codeplex.com/</projectUrl>
+    <licenseUrl>http://twavatar.codeplex.com/license</licenseUrl>
+  </metadata>
+  <files>
+    <file src="bin\Release\Twavatar.dll" target="lib" />
+    <file src="bin\Release\Twavatar.pdb" target="lib" />
+  </files>
+</package>
